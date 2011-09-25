@@ -1,0 +1,41 @@
+---
+# TEST CONFIGURATION
+site:
+  name: SedCat·test Long Name
+  short_name: SedCat·test
+
+Model::DB:
+  schema_class: SedCat::Schema
+  connect_info:
+    - "you forgot to set me, didn't you?"
+    - ~
+    - ~
+    - RaiseError: 1
+      AutoCommit: 1
+      ChopBlanks: 1
+      sqlite_unicode: 1
+
+# VIEWS ----------------------------------------------
+
+View::Alloy:
+  COMPILE_DIR: __path_to(etc/ttc)__
+  INCLUDE_PATH:
+    - __path_to(root/alloy/themes/ootb)__
+    - __path_to(root/alloy/src)__
+    - __path_to(root/alloy)__
+  TEMPLATE_EXTENSION: ".tt"
+  TRIM: 1
+  CATALYST_VAR: "c"
+  TIMER: ~
+  DEBUG: ~
+  STAT_TTL: 1
+
+# PLUGINS --------------------------------------------
+
+#CHI:
+#  driver: FastMmap
+#  root_dir: __path_to(etc/sedition)__
+#  cache_size: 3m
+#Plugin::Cache:
+#  backend:
+#    class: Cache::FileCache
