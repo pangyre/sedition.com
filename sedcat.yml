@@ -5,8 +5,8 @@ default_view: Alloy
 
 # This should go in sedcat_local.yml
 site:
-  name: Sedition·com
-  short_name: Sedition·com
+  name: SedCat Unconfigured
+  short_name: SedCat
 
 # CONTROLLERS ----------------------------------------
 

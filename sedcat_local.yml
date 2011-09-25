@@ -1,88 +1,13 @@
 ---
-name: SedCat
-default_view: Alloy
-# not necessary? use_request_uri_for_path: 1
-
 site:
-  name: SedCat Unconfigured
-  short_name: SedCat
+  name: Sedition·com
+  short_name: Sedition·com
 
 # CONTROLLERS ----------------------------------------
 
-# Controller::Errors:
-
-# Controller::Link:
-
-# Controller::Search:
-
-# Controller::Feed: ...no, a view.
-
-# Controller::Comment:
-
-# Controller::Sitemap:
-
-# get pubdo in here somehow... as parent?
-
 # MODELS ---------------------------------------------
-
-# Model::AmazonAPA:
-
-# Model::Luxy:
-#  args:
-#    index_dir: __path_to(var/search-index)__
-
-Model::DB:
-  schema_class: SedCat::Schema
-  connect_info:
-    - "you forgot to set the connect info, didn't you?"
-    - ~
-    - ~
-    - RaiseError: 1
-      AutoCommit: 1
-      ChopBlanks: 1
-#      mysql_enable_utf8: 1
-#      sqlite_unicode: 1
 
 # VIEWS ----------------------------------------------
 
-View::Alloy:
-  COMPILE_DIR: __path_to(etc/ttc)__
-  INCLUDE_PATH:
-    - __path_to(root/alloy/themes/ootb)__
-    - __path_to(root/alloy/src)__
-    - __path_to(root/alloy)__
-  TEMPLATE_EXTENSION: ".tt"
-  TRIM: 1
-  CATALYST_VAR: "c"
-  TIMER: ~
-  DEBUG: ~
-  STAT_TTL: 60
-
 # PLUGINS --------------------------------------------
 
-#CHI:
-#  driver: FastMmap
-#  root_dir: __path_to(etc/sedition)__
-#  cache_size: 3m
-#Plugin::Cache:
-#  backend:
-#    class: Cache::FileCache
-
-Plugin::Authentication:
-  default_realm: openid
-  realms:
-    openid:
-      credential:
-        class: OpenID
-        extensions:
-          - http://openid.net/extensions/sreg/1.1
-          - optional: 'fullname,nickname,timezone'
-            required: email
-        flatten_extensions_into_user: 1
-        store:
-          class: OpenID
-        ua_args:
-          whitelisted_hosts:
-            - 127.0.0.1
-            - localhost
-        ua_class: LWPx::ParanoidAgent
