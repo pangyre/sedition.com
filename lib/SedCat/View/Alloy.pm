@@ -10,7 +10,7 @@ __PACKAGE__->config
      ENCODING => "UTF-8",
      RECURSION => 1,
      TEMPLATE_EXTENSION => ".tt",
-     PRE_PROCESS => "lib/macros.tt",
+     # PRE_PROCESS => "lib/macros.tt",
      FILTERS => {
          format_number => sub {
              require Number::Format;
