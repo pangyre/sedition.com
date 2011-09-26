@@ -18,6 +18,17 @@ $ENV{SEDCAT_CONFIG_LOCAL_SUFFIX} = "test";
 }
 
 #---------------------------------------------------------------------
+# Sanity, basics.
+{
+    ok( my $res = request("/session"), "GET /session" );
+    ok( $res->is_success, "Success" );
+#    use HTTP::Request::Common;
+#           my $response = request POST '/foo', [
+#               bar => 'baz',
+#               something => 'else'
+#           ];
+
+}
 
 
 done_testing();
