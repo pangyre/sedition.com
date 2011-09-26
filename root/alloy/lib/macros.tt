@@ -1,0 +1,1 @@
+[% site = c.config.site %]
